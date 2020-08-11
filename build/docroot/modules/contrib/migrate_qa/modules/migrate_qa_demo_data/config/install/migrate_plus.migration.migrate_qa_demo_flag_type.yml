@@ -1,0 +1,30 @@
+id: migrate_qa_demo_flag_type
+label: Migrate QA Flag Types'
+dependencies:
+  enforced:
+    module:
+      - migrate_qa_demo_data
+source:
+  plugin: csv
+  path: 'public://migrate_qa_demo_data/flag_type.csv'
+  ids:
+    - id
+  header_row_count: 1
+  column_names:
+    -
+      id: ID
+    -
+      tags: Tags
+
+destination:
+  plugin: 'entity:taxonomy_term'
+
+process:
+  vid:
+    plugin: default_value
+    default_value: migrate_qa_flag_type
+  name: tags
+  parent:
+    plugin: default_value
+    default_value: 0
+    langcode: en

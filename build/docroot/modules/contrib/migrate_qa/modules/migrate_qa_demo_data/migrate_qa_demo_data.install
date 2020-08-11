@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for migrate_qa_demo_data.
+ */
+
+use Drupal\Core\File\FileSystemInterface;
+
+/**
+ * Copies example files to the site's public files directory.
+ */
+function migrate_qa_demo_data_install() {
+  $module_name = 'migrate_qa_demo_data';
+  // Create the example file directory and ensure it's writable.
+  $directory = 'public://' . $module_name;
+  \Drupal::service('file_system')->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+
+  // Copy the example file to example directory.
+  $module_path = drupal_get_path('module', $module_name);
+  $file_name = 'flag_type.csv';
+  $file_source = $module_path . '/data/' . $file_name;
+  \Drupal::service('file_system')->copy($file_source, $directory . '/' . $file_name, FileSystemInterface::EXISTS_REPLACE);
+}

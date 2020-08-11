@@ -1,0 +1,8 @@
+services:
+  migrate_qa.tracker_param_converter:
+    class: Drupal\migrate_qa\ParamConverter\TrackerConverter
+    tags:
+      - { name: paramconverter }
+  migrate_qa.util:
+    class: Drupal\migrate_qa\Util
+    arguments: ['@database', '@entity_type.manager', '@current_route_match']

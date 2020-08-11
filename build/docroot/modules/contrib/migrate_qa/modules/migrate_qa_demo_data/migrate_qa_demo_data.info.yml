@@ -1,0 +1,13 @@
+name: Migrate QA Demo Data
+description: Provides example data to demonstrate usage of the Migrate QA module
+package: Migration
+type: module
+core: 8.x
+dependencies:
+  - migrate_qa:migrate_qa
+  - migrate_source_csv:migrate_source_csv (>=3.0)
+
+# Information added by Drupal.org packaging script on 2020-06-22
+version: '8.x-1.0-alpha4'
+project: 'migrate_qa'
+datestamp: 1592859944

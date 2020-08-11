@@ -1,0 +1,24 @@
+advban.admin_page:
+  title: 'Advanced IP address bans'
+  description: 'Ban visits from specific or range IP addresses.'
+  route_name: advban.admin_page
+  weight: 10
+  parent: user.admin_index
+
+advban.search:
+  route_name: advban.search
+  title: 'Search'
+  weight: 1
+  parent: advban.admin_page
+
+advban.delete_all:
+  route_name: advban.delete_all
+  title: 'Delete all'
+  weight: 2
+  parent: advban.admin_page
+
+advban.settings:
+  route_name: advban.settings
+  title: 'Settings'
+  weight: 10
+  parent: advban.admin_page

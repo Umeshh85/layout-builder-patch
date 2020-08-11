@@ -1,0 +1,15 @@
+name: Migrate QA
+description: Provides quality assurance tools for validating content migrations
+package: Migration
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:field
+  - drupal:taxonomy
+  - dynamic_entity_reference:dynamic_entity_reference
+
+# Information added by Drupal.org packaging script on 2020-06-22
+version: '8.x-1.0-alpha4'
+project: 'migrate_qa'
+datestamp: 1592859944
